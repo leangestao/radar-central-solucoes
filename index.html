@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="O que a Domínio publicou ou alterou na Central de Soluções, com comparação antes e depois e painel da Domínio IA. Monitoramento LEAN Performance.">
+<meta property="og:title" content="Radar da Central de Soluções | LEAN Performance">
+<meta property="og:description" content="Alterações da Central de Soluções Domínio, antes e depois, e tudo sobre a Domínio IA.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://leangestao.com.br/cs/">
+<meta name="theme-color" content="#0b5c7a">
+<style>*,*::before,*::after{box-sizing:border-box}html{-webkit-text-size-adjust:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Radar da Central de Soluções</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: coluna de leitura — status da checagem, alterações (antes x depois), painel Domínio IA em destaque, postagens monitoradas */
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --ink:#14212b; --muted:#566874; --line:#dbe3e9;
+  --accent:#0b5c7a; --accent-soft:#e2eff5;
+  --ok:#1f7a4d; --ok-soft:#e2f3ea; --warn:#9a6200; --warn-soft:#fbf0d9;
+  --bad:#a8322b; --bad-soft:#fae4e2;
+  --ia-bg:#102a36; --ia-surface:#173947; --ia-ink:#eaf4f8; --ia-muted:#a6c1cc; --ia-line:#2a4d5c; --ia-accent:#6fe0c8;
+  --before:#fbf3f2; --after:#eef8f2;
+  --f-display:"Sora",system-ui,sans-serif;
+  --f-body:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d151b; --surface:#152029; --ink:#e6edf2; --muted:#93a4b1; --line:#253540;
+  --accent:#5cb8d6; --accent-soft:#163240;
+  --ok:#5fc791; --ok-soft:#14301f; --warn:#e5b04f; --warn-soft:#33270f;
+  --bad:#ef8a83; --bad-soft:#3a1a18;
+  --ia-bg:#0f2c38; --ia-surface:#15394a; --ia-ink:#eaf4f8; --ia-muted:#9fbcc8; --ia-line:#285062; --ia-accent:#6fe0c8;
+  --before:#2a1c1b; --after:#15291f; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d151b; --surface:#152029; --ink:#e6edf2; --muted:#93a4b1; --line:#253540;
+  --accent:#5cb8d6; --accent-soft:#163240;
+  --ok:#5fc791; --ok-soft:#14301f; --warn:#e5b04f; --warn-soft:#33270f;
+  --bad:#ef8a83; --bad-soft:#3a1a18;
+  --ia-bg:#0f2c38; --ia-surface:#15394a; --ia-ink:#eaf4f8; --ia-muted:#9fbcc8; --ia-line:#285062; --ia-accent:#6fe0c8;
+  --before:#2a1c1b; --after:#15291f; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:800px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:32px}
+header{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--f-display);font-weight:700;font-size:clamp(26px,5vw,36px);line-height:1.12;margin:0;text-wrap:balance}
+.lede{color:var(--muted);margin:0;max-width:62ch}
+.cta{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;margin-top:6px;background:var(--accent);color:var(--surface);text-decoration:none;font-weight:600;padding:9px 16px;border-radius:8px}
+h2{font-family:var(--f-display);font-weight:600;font-size:20px;margin:0;text-wrap:balance}
+h3{margin:0;font-size:16px;font-weight:600}
+.sec{display:flex;flex-direction:column;gap:12px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.hint{color:var(--muted);font-size:14px}
+.k{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+.status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.status>div{padding:12px 14px;display:flex;flex-direction:column;gap:2px;min-width:0}
+.status>div+div{border-left:1px solid var(--line)}
+.v{font-weight:600;font-variant-numeric:tabular-nums}
+.status-note{margin:0;color:var(--muted);font-size:14px}
+@media (max-width:560px){.status{grid-template-columns:1fr}.status>div+div{border-left:0;border-top:1px solid var(--line)}}
+
+.empty{border:1px dashed var(--line);border-radius:10px;padding:16px 18px;color:var(--muted);background:var(--surface)}
+.changes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.change{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:14px;display:flex;flex-direction:column;gap:10px}
+.change-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.when{font-family:var(--f-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.chip{font-family:var(--f-mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.t-nova{background:var(--ok-soft);color:var(--ok)}
+.t-alterada{background:var(--warn-soft);color:var(--warn)}
+.t-removida{background:var(--bad-soft);color:var(--bad)}
+.t-ia{background:var(--accent-soft);color:var(--accent)}
+.change p{margin:0}
+.diff{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.diff>div{border-radius:8px;padding:10px 12px;min-width:0}
+.diff .before{background:var(--before)}
+.diff .after{background:var(--after)}
+.diff p{font-size:15px;margin-top:2px}
+@media (max-width:560px){.diff{grid-template-columns:1fr}}
+details.hist{border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+details.hist>summary{padding:12px 14px;cursor:pointer;font-weight:600}
+details.hist .changes{padding:0 14px 14px}
+
+/* Painel Domínio IA */
+.ia{background:var(--ia-bg);color:var(--ia-ink);border-radius:14px;padding:22px clamp(16px,4vw,26px);display:flex;flex-direction:column;gap:18px}
+.ia .k{color:var(--ia-muted)}
+.ia h2{color:var(--ia-ink);font-size:22px}
+.ia-tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ia-accent)}
+.ia-head{display:flex;flex-direction:column;gap:6px}
+.ia-head p{margin:0;color:var(--ia-muted);max-width:62ch}
+.ia-status{display:flex;gap:10px;align-items:flex-start;background:var(--ia-surface);border:1px solid var(--ia-line);border-radius:10px;padding:12px 14px}
+.dot{flex:none;width:10px;height:10px;border-radius:50%;margin-top:7px;background:var(--ia-muted)}
+.dot.on{background:var(--ia-accent)}
+.ia-status p{margin:0}
+.ia-status small{display:block;color:var(--ia-muted);font-size:13px}
+.ia-block{display:flex;flex-direction:column;gap:10px}
+.mods{display:flex;gap:8px;flex-wrap:wrap}
+.mod{border:1px solid var(--ia-accent);color:var(--ia-ink);border-radius:999px;padding:4px 12px;font-weight:600;font-size:14px}
+.feats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.feat{background:var(--ia-surface);border:1px solid var(--ia-line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.feat b{font-weight:600}
+.feat span{color:var(--ia-muted);font-size:14px}
+.feat .area{font-family:var(--f-mono);font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--ia-accent)}
+@media (max-width:560px){.feats{grid-template-columns:1fr}}
+.faq{display:flex;flex-direction:column;border-top:1px solid var(--ia-line)}
+.faq details{border-bottom:1px solid var(--ia-line)}
+.faq summary{cursor:pointer;padding:11px 2px;font-weight:600;list-style-position:outside}
+.faq summary:focus-visible{outline-color:var(--ia-accent)}
+.faq p{margin:0 0 12px;color:var(--ia-muted);max-width:64ch}
+.ia-central{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.ia-central li{background:var(--ia-surface);border:1px solid var(--ia-line);border-radius:10px;padding:12px 14px}
+.ia-central li span{display:block;color:var(--ia-muted);font-size:14px}
+.ia-src{font-size:13px;color:var(--ia-muted);margin:0}
+.ia-src a{color:var(--ia-accent)}
+
+.base{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.post{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.post .n{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.post span{color:var(--muted);font-size:14px}
+.post a{font-size:14px;font-weight:600;margin-top:auto;padding-top:4px}
+@media (max-width:560px){.base{grid-template-columns:1fr}}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:4px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">LEAN Performance · Sistema Domínio</div>
+    <h1>Radar da Central de Soluções</h1>
+    <p class="lede">O que a Domínio publicou ou alterou na Central de Soluções, comparando cada consulta com a anterior. Verificado toda segunda, quarta e sábado.</p>
+    <a class="cta" href="https://suporte.dominioatendimento.com/central/faces/central-solucoes.html" target="_blank" rel="noopener">Abrir a Central de Soluções ↗</a>
+  </header>
+
+  <section class="sec" aria-labelledby="h-status">
+    <h2 id="h-status" hidden>Situação da checagem</h2>
+    <div class="status">
+      <div><span class="k">Última checagem</span><span class="v" id="st-check">—</span></div>
+      <div><span class="k">Resultado</span><span class="v" id="st-result">Carregando…</span></div>
+      <div><span class="k">Próxima checagem</span><span class="v" id="st-next">—</span></div>
+    </div>
+    <p class="status-note" id="st-note"></p>
+  </section>
+
+  <section class="sec" aria-labelledby="h-nov">
+    <div class="sec-head">
+      <h2 id="h-nov">Alterações da última semana</h2>
+      <span class="hint" id="nov-period"></span>
+    </div>
+    <ul class="changes" id="recent"></ul>
+    <div class="empty" id="recent-empty" hidden>Nenhuma alteração confirmada nos últimos 7 dias. As 11 postagens seguem iguais à consulta anterior.</div>
+    <details class="hist" id="hist" hidden>
+      <summary id="hist-sum">Histórico de alterações</summary>
+      <ul class="changes" id="older"></ul>
+    </details>
+  </section>
+
+  <section class="ia" aria-labelledby="h-ia">
+    <div class="ia-head">
+      <span class="ia-tag">Em destaque</span>
+      <h2 id="h-ia">Domínio IA</h2>
+      <p>A inteligência artificial da Domínio. Aqui reunimos o que a Central de Soluções já publicou sobre ela e o que foi anunciado no lançamento.</p>
+    </div>
+
+    <div class="ia-status">
+      <span class="dot" id="ia-dot"></span>
+      <p><span id="ia-status">—</span><small id="ia-verif"></small></p>
+    </div>
+
+    <div class="ia-block" id="ia-central-wrap" hidden>
+      <span class="k">Publicado na Central de Soluções</span>
+      <ul class="ia-central" id="ia-central"></ul>
+    </div>
+
+    <div class="ia-block">
+      <span class="k">Onde a IA está ativa</span>
+      <div class="mods" id="ia-mods"></div>
+    </div>
+
+    <div class="ia-block">
+      <span class="k">Recursos anunciados</span>
+      <div class="feats" id="ia-feats"></div>
+    </div>
+
+    <div class="ia-block">
+      <span class="k">Perguntas e respostas</span>
+      <div class="faq" id="ia-faq"></div>
+    </div>
+
+    <p class="ia-src" id="ia-src"></p>
+  </section>
+
+  <section class="sec" aria-labelledby="h-base">
+    <div class="sec-head">
+      <h2 id="h-base">Postagens monitoradas</h2>
+      <span class="hint" id="base-count"></span>
+    </div>
+    <ul class="base" id="base"></ul>
+  </section>
+
+  <footer>
+    <span>Monitoramento independente feito pela <b>LEAN Performance</b>. A Central não tem link próprio para cada postagem: abra a Central e procure pelo título.</span>
+    <span id="upd"></span>
+  </footer>
+</div>
+
+<script>
+const DATA_URL="https://raw.githubusercontent.com/leangestao/radar-central-solucoes/main/dados.json";
+const CENTRAL="https://suporte.dominioatendimento.com/central/faces/central-solucoes.html";
+const TIPOS={nova:"Nova postagem",alterada:"Texto alterado",removida:"Removida"};
+const DIAS=["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
+const $=id=>document.getElementById(id);
+function el(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e}
+function br(d){const m=String(d||"").match(/^(\d{4})-(\d{2})-(\d{2})/);return m?`${m[3]}/${m[2]}/${m[1]}`:"—"}
+function toDate(d){const m=String(d||"").match(/^(\d{4})-(\d{2})-(\d{2})/);return m?Date.UTC(+m[1],+m[2]-1,+m[3]):NaN}
+
+function proximaChecagem(){
+  // Segunda, quarta e sábado às 9h (horário da Bahia, UTC-3)
+  const agora=new Date(Date.now()-3*3600e3);
+  for(let i=0;i<8;i++){
+    const d=new Date(Date.UTC(agora.getUTCFullYear(),agora.getUTCMonth(),agora.getUTCDate()+i,9,30));
+    if([1,3,6].includes(d.getUTCDay())&&d>agora){
+      const dd=String(d.getUTCDate()).padStart(2,"0"),mm=String(d.getUTCMonth()+1).padStart(2,"0");
+      return `${DIAS[d.getUTCDay()]} ${dd}/${mm}, 9h`;
+    }
+  }
+  return "—";
+}
+
+function changeItem(n){
+  const li=el("li","change");
+  const top=el("div","change-top");
+  const tipo=TIPOS[n.tipo]?n.tipo:"alterada";
+  top.append(el("span","chip t-"+tipo,TIPOS[tipo]));
+  if(n.ia)top.append(el("span","chip t-ia","Domínio IA"));
+  top.append(el("span","when",br(n.data)));
+  li.append(top,el("h3",null,n.titulo||"Sem título"));
+  if(n.descricao)li.append(el("p",null,n.descricao));
+  if(n.antes||n.depois){
+    const diff=el("div","diff");
+    const a=el("div","before");a.append(el("span","k","Consulta anterior"),el("p",null,n.antes||(tipo==="nova"?"Não existia":"—")));
+    const b=el("div","after");b.append(el("span","k","Consulta atual"),el("p",null,n.depois||(tipo==="removida"?"Saiu da Central":"—")));
+    diff.append(a,b);li.append(diff);
+  }
+  return li;
+}
+
+function render(d){
+  const uc=d.ultimaChecagem||{};
+  $("st-check").textContent=br(uc.data);
+  $("st-result").textContent=uc.resultado||"—";
+  $("st-next").textContent=proximaChecagem();
+  $("st-note").textContent=[uc.observacao, uc.baseAnterior?`Comparação feita com a consulta de ${br(uc.baseAnterior)}.`:""].filter(Boolean).join(" ");
+
+  const ref=toDate(uc.data);
+  const nov=(d.novidades||[]).slice().sort((a,b)=>String(b.data).localeCompare(String(a.data)));
+  const recent=nov.filter(n=>!isNaN(ref)&&ref-toDate(n.data)<=7*864e5);
+  const older=nov.filter(n=>!recent.includes(n));
+  if(!isNaN(ref))$("nov-period").textContent=`${br(new Date(ref-7*864e5).toISOString())} a ${br(uc.data)}`;
+  $("recent").replaceChildren(...recent.map(changeItem));
+  $("recent-empty").hidden=recent.length>0;
+  $("hist").hidden=older.length===0;
+  $("hist-sum").textContent=`Histórico de alterações (${older.length})`;
+  $("older").replaceChildren(...older.map(changeItem));
+
+  const ia=d.dominioIA||{};
+  const naCentral=ia.naCentral||[];
+  $("ia-dot").classList.toggle("on",naCentral.length>0);
+  $("ia-status").textContent=naCentral.length?`${naCentral.length} publicaç${naCentral.length>1?"ões":"ão"} sobre a Domínio IA na Central de Soluções.`:(ia.statusCentral||"—");
+  $("ia-verif").textContent=[ia.verificadoEm?`Verificado em ${br(ia.verificadoEm)}.`:"",ia.lancamento||""].filter(Boolean).join(" ");
+  $("ia-central-wrap").hidden=naCentral.length===0;
+  $("ia-central").replaceChildren(...naCentral.map(x=>{const li=el("li");li.append(el("b",null,x.titulo||""),el("span",null,`${br(x.data)} · ${x.resumo||""}`));return li}));
+  $("ia-mods").replaceChildren(...(ia.modulos||[]).map(m=>el("span","mod",m)));
+  $("ia-feats").replaceChildren(...(ia.recursos||[]).map(r=>{const f=el("div","feat");f.append(el("span","area",r.area||""),el("b",null,r.nome||""),el("span",null,r.descricao||""));return f}));
+  $("ia-faq").replaceChildren(...(ia.perguntas||[]).map(q=>{const dt=el("details");dt.append(el("summary",null,q.p),el("p",null,q.r));return dt}));
+  const src=$("ia-src");src.replaceChildren();
+  const fx=ia.fontesExternas||[];
+  if(fx.length){
+    src.append("Recursos e respostas com base no anúncio de lançamento: ");
+    fx.forEach((f,i)=>{const a=el("a",null,`${f.veiculo||"fonte"} (${br(f.data)})`);a.href=f.url;a.target="_blank";a.rel="noopener";src.append(a);if(i<fx.length-1)src.append(", ")});
+    src.append(". Confirme detalhes de liberação com o seu canal Domínio.");
+  }
+
+  const arts=(d.artigos||[]).slice().sort((a,b)=>(a.ordem||0)-(b.ordem||0));
+  $("base-count").textContent=`${arts.length} postagens`;
+  $("base").replaceChildren(...arts.map(a=>{
+    const li=el("li","post");
+    const n=el("span","n",String(a.ordem||"").padStart(2,"0")+(a.ia?" · Domínio IA":""));
+    const link=el("a",null,"Ver na Central ↗");link.href=CENTRAL;link.target="_blank";link.rel="noopener";
+    li.append(n,el("b",null,a.titulo||""),el("span",null,a.resumo||""),link);return li;
+  }));
+  if(d.atualizadoEm)$("upd").textContent=`Dados atualizados em ${br(d.atualizadoEm)}.`;
+}
+
+$("st-next").textContent=proximaChecagem();
+fetch(DATA_URL+"?t="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(render).catch(()=>{
+  $("st-result").textContent="Dados indisponíveis";
+  $("st-note").textContent="Não foi possível carregar os dados agora. Recarregue a página em alguns instantes.";
+});
+</script>
+
+</body>
+</html>

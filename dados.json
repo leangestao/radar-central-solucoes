@@ -1,0 +1,49 @@
+{
+  "atualizadoEm": "2026-10-15T13:50:00-03:00",
+  "ultimaChecagem": {
+    "data": "2026-10-12",
+    "baseAnterior": "2026-10-10",
+    "resultado": "Sem novidade confirmada",
+    "observacao": "Comparadas as 11 postagens da Central com a consulta anterior. Nenhum título novo, removido ou texto alterado de forma confirmada."
+  },
+  "novidades": [],
+  "artigos": [
+    {"ordem": 1, "titulo": "Conheça o Crédito do Trabalhador!", "resumo": "eConsignado via CTPS Digital: ofertas, garantias de FGTS, limite de 35% da margem e reporte via eSocial e FGTS Digital.", "ia": false},
+    {"ordem": 2, "titulo": "Conheça o MIT, novo Módulo de Inclusão de Tributos da DCTFWeb", "resumo": "Substitui a DCTF Mensal desde jan/2025: tributos, prazos, geração no Domínio e envio pelo eCAC.", "ia": false},
+    {"ordem": 3, "titulo": "Conheça a Contabilidade Digital!", "resumo": "Extratos bancários automáticos via Open Finance e conciliação no Domínio.", "ia": false},
+    {"ordem": 4, "titulo": "Conheça o Domínio Benefícios", "resumo": "Cartão refeição e alimentação integrado ao Domínio Folha, com configuração e recargas.", "ia": false},
+    {"ordem": 5, "titulo": "Conheça a Domínio Conta PJ", "resumo": "Conta digital empresarial integrada à contabilidade e aos honorários.", "ia": false},
+    {"ordem": 6, "titulo": "Os 10 erros mais frequentes no eSocial", "resumo": "Erros 106, 105, 989, 1352, 269, 244, 536, 1861, 181/721 e 247, com correções.", "ia": false},
+    {"ordem": 7, "titulo": "Kolossus Auditor | Como obter sucesso na implantação!", "resumo": "Contratação, permissões, auditorias, cruzamentos e funcionalidades extras.", "ia": false},
+    {"ordem": 8, "titulo": "Erro Lote da EFD REINF: veja os passos para resolver", "resumo": "Erros de evento, certificado digital e interferência de antivírus ou plugins.", "ia": false},
+    {"ordem": 9, "titulo": "Está iniciando na Domínio? Entenda a importação de dados do eSocial", "resumo": "O que é importado na implantação e como tratar o erro 106.", "ia": false},
+    {"ordem": 10, "titulo": "Rubricas em Foco: conheça o cadastro da Rubrica", "resumo": "Guias Geral, Configurações, base de cálculo, rescisão e eSocial.", "ia": false},
+    {"ordem": 11, "titulo": "Rubricas em Foco: Horas Extras, Pensão, Plano de Saúde...", "resumo": "Configuração de horas extras com DSR, faltas, ATS, pensão e plano de saúde.", "ia": false}
+  ],
+  "dominioIA": {
+    "statusCentral": "Ainda não há publicação sobre a Domínio IA na Central de Soluções.",
+    "verificadoEm": "2026-10-15",
+    "naCentral": [],
+    "lancamento": "Anunciada em 01/10/2026 no Synergy 2026, em São Paulo.",
+    "modulos": ["Folha de Pagamento", "Escrita Fiscal", "Contabilidade"],
+    "recursos": [
+      {"nome": "Converse com o relatório", "area": "Contabilidade", "descricao": "Perguntas em linguagem natural sobre balancetes e demonstrações financeiras, com diagnóstico dos dados."},
+      {"nome": "Conferência de eSocial e DCTFWeb", "area": "Folha", "descricao": "Aponta inconsistências no fechamento da folha e sugere correções para o profissional analisar."},
+      {"nome": "Parametrização de rubricas", "area": "Folha", "descricao": "Lê arquivos PDF para ajudar a configurar rubricas e fórmulas complexas."},
+      {"nome": "Diagnóstico da Reforma Tributária", "area": "Geral", "descricao": "Avalia impactos da transição tributária na rotina das PMEs e gera relatórios."},
+      {"nome": "BIs customizados", "area": "Geral", "descricao": "Criação de painéis por linguagem natural para atuação consultiva com PMEs."},
+      {"nome": "Onboarding de novos clientes", "area": "Contabilidade", "descricao": "Automatiza parte do mapeamento do Plano Referencial (mais de 80%, segundo a empresa)."}
+    ],
+    "perguntas": [
+      {"p": "O que é a Domínio IA?", "r": "A inteligência artificial dentro do sistema Domínio. Ela combina IA generativa com o conteúdo fiscal, tributário e trabalhista da Thomson Reuters."},
+      {"p": "Em quais módulos ela está ativa?", "r": "Folha de Pagamento, Escrita Fiscal e Contabilidade, segundo o anúncio de lançamento."},
+      {"p": "Preciso exportar planilhas ou usar outra plataforma?", "r": "Não. A proposta é trabalhar dentro do próprio sistema, fazendo perguntas em linguagem natural sobre relatórios, dados e documentos."},
+      {"p": "Quem valida o que a IA sugere?", "r": "O profissional do escritório. A Thomson Reuters afirma que a validação e as decisões continuam com o contador."},
+      {"p": "Como liberar? Tem custo?", "r": "Ainda não foi informado. Até agora não há orientação de liberação ou contratação publicada na Central de Soluções."}
+    ],
+    "fontesExternas": [
+      {"titulo": "Domínio IA une inteligência artificial e conhecimento tributário da Thomson Reuters", "veiculo": "Inforchannel", "data": "2026-10-01", "url": "https://inforchannel.com.br/2026/10/01/dominio-ia-une-inteligencia-artificial-e-conhecimento-tributario-da-thomson-reuters/"},
+      {"titulo": "Thomson Reuters lança Domínio IA para automatizar rotinas fiscais e contábeis", "veiculo": "Capital Digital", "data": "2026-10-01", "url": "https://capitaldigital.com.br/thomson-reuters-lanca-dominio-ia-para-automatizar-rotinas-fiscais-e-contabeis/"}
+    ]
+  }
+}
